@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+html {
+  font-size: 100%;
+}
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+ul {
+  list-style: none;
+}
+
+.content {
+  width: 100%;
+}
+
+#slider {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+/*
+スライダー矢印（共通）
+*/
+#slider .prev,
+#slider .next {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  cursor: pointer;
+  opacity: 0.7;
+  position: absolute;
+  top: 45%;
+  transition: 0.5s;
+  z-index: 10;
+}
+#slider .prev:hover,
+#slider .next:hover {
+  opacity: 0.5;
+}
+#slider .prev::before,
+#slider .prev::after,
+#slider .next::before,
+#slider .next::after {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+}
+
+/*
+スライダー左矢印
+*/
+#slider .prev {
+  left: 0;
+}
+#slider .prev::before,
+#slider .prev::after {
+  left: 12px;
+}
+#slider .prev:before {
+  top: 37%;
+  transform: rotate(-45deg);
+}
+#slider .prev:after {
+  bottom: 37%;
+  transform: rotate(45deg);
+}
+
+/*
+スライダー右矢印
+*/
+#slider .next {
+  right: 0;
+}
+#slider .next::before,
+#slider .next::after {
+  right: 12px;
+}
+#slider .next:before {
+  top: 37%;
+  transform: rotate(45deg);
+}
+#slider .next:after {
+  bottom: 37%;
+  transform: rotate(-45deg);
+}
+
+/*-------------------------------------------
+SP
+-------------------------------------------*/
+@media screen and (max-width: 900px) {
+  #slider .prev,
+  #slider .next {
+    top: 40%;
+  }
+}
